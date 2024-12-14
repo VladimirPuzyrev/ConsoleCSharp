@@ -6,12 +6,16 @@ Console.WriteLine("Введите размер второго массива: ")
 int second = Int32.Parse(Console.ReadLine());
 
 
-int[] mainArray = new int[first];
+char[] mainArray = new char[first];
+int randomChar;
+
 Random rnd = new Random();
 
 for(int i = 0; i < mainArray.Length; i++)
 {
-    mainArray[i] = rnd.Next(5, 15);
+    randomChar = rnd.Next(97, 123);
+    mainArray[i] = (char)randomChar;
+    
     Console.Write(mainArray[i] + "||");
 }
 
@@ -73,7 +77,7 @@ Console.WriteLine(pow(n)); */
 
 // ------------------------------------------------
 
-static int[] massiv(int[] array, int a)
+/* static int[] massiv(int[] array, int a)
 {
 
     if(a > array.Length)
@@ -97,10 +101,18 @@ int[] final = massiv(mainArray, second);
 for ( int i = 0; i < final.Length; i++)
 {
     Console.WriteLine(final[i]);
+} */
+
+
+// ------------------------------------------------
+
+
+static char[] parseArray(ref char[] array)
+{
+    
 }
 
-
-
+static int[] finalArray(int[] array)
 
 
 
