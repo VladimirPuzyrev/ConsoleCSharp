@@ -2,26 +2,28 @@
 int first = Int32.Parse(Console.ReadLine());
 
 
-Console.WriteLine("Введите размер второго массива: ");
-int second = Int32.Parse(Console.ReadLine());
-
-
-char[] mainArray = new char[first];
-int randomChar;
+//Console.WriteLine("Введите размер вложенного массива: ");
+//int second = Int32.Parse(Console.ReadLine());
 
 Random rnd = new Random();
 
-for(int i = 0; i < mainArray.Length; i++)
+char[] mainCharArray = new char[first];
+
+
+for (int i = 0; i < mainCharArray.Length; i++)
 {
-    randomChar = rnd.Next(97, 123);
-    mainArray[i] = (char)randomChar;
-    
-    Console.Write(mainArray[i] + "||");
+    mainCharArray[i] = (char)rnd.Next(97, 123);
 }
 
 
-Console.WriteLine("--------------");
+for (int i = 0; i < mainCharArray.Length; i++)
+{
+    Console.Write(mainCharArray[i] + " || ");
+}
 
+
+
+Console.WriteLine();
 // ------------------------------------------------
 
 /* static int dubFаc(int x)
@@ -106,18 +108,168 @@ for ( int i = 0; i < final.Length; i++)
 
 // ------------------------------------------------
 
+/*
 
-static char[] parseArray(ref char[] array)
+char[] mainArray = new char[first];
+int randomChar;
+
+Random rnd = new Random();
+
+for(int i = 0; i < mainArray.Length; i++)
 {
-    
+    randomChar = rnd.Next(1, 127);
+    mainArray[i] = (char)randomChar;
+
+    Console.Write(mainArray[i] + " | ");
 }
 
-static int[] finalArray(int[] array)
+Console.WriteLine();
+Console.WriteLine("--------------");
+
+
+static int[] parseArray(char[] charArray)
+{
+    int[] intArray = new int[charArray.Length];
+    for(int i = 0; i < charArray.Length; i++)
+    {
+        intArray[i] = (int)charArray[i];
+    }
+
+    return intArray;
+}
+
+int[] final = new int[mainArray.Length];
+
+final = parseArray(mainArray);
+
+for (int i = 0; i < final.Length; i++)
+{
+    Console.WriteLine(final[i]);
+}
+
+*/
+
+// ------------------------------------------------
+
+
+/*
+
+Random rnd = new Random();
+
+int[] mainArray = new int[first];
+
+for (int i = 0; i < mainArray.Length; i++)
+{
+    mainArray[i] = rnd.Next(0, 100);
+}
+
+for (int i = 0; i < mainArray.Length; i++)
+{
+    Console.Write(mainArray[i] + " | ");
+}
+
+Console.WriteLine();
+
+
+static int average(int[] array)
+{
+    int sum = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        sum += array[i];
+    }
+
+    sum /= array.Length;
+
+    return sum;
+
+}
+
+Console.Write(average(mainArray));
+
+*/
+
+// ------------------------------------------------
 
 
 
+//int[,] mainArray = new int[first, second];
+
+//for (int i = 0; i < mainArray.GetLength(0); i++)
+//{
+//    for (int j = 0; j < mainArray.GetLength(1); j++)
+//    {
+//        mainArray[i, j] = rnd.Next(0, 255);
+//    }
+//}
+
+//for (int i = 0; i < mainArray.GetLength(0); i++)
+//{
+//    for (int j = 0; j < mainArray.GetLength(1); j++)
+//    {
+//        Console.Write(mainArray[i, j] + " | ");
+//    }
+//    Console.WriteLine();
+//}
 
 
 
+//Console.WriteLine();
+
+//static int findMaxElement(int[,] array, out int iIndex, out int jIndex)
+//{
+//    int max = -1;
+
+//    iIndex = 0;
+//    jIndex = 0;
+
+//    for (int i = 0; i < array.GetLength(0); i++)
+//    {
+//        for (int j = 0; j < array.GetLength(1); j++)
+//        {
+//            if (array[i, j] > max)
+//            {
+//                max = array[i, j];
+//                iIndex = i;
+//                jIndex = j;
+//            }
+//        }
+
+//    }
+
+//    return max;
+//}
 
 
+//int iIndex, jIndex;
+
+//int maxElement = findMaxElement(mainArray, out iIndex, out jIndex);
+
+//Console.WriteLine($" Максимальный элемент {maxElement}");
+//Console.WriteLine($" I максимального элемента {iIndex}");
+//Console.WriteLine($" J максимального элемента {jIndex}");
+
+// ------------------------------------------------
+
+
+static char[] charMethod(char[] array)
+{
+
+    char[] chars = new char[array.Length];
+    for(int i  = 0; i < array.Length; i++)
+    {
+        chars[i] = array[(array.Length-1) - i];
+    }
+
+    return chars;
+
+}
+
+
+char[] reversArray = charMethod(mainCharArray);
+
+
+for (int i = 0; i < reversArray.Length; i++)
+{
+    Console.Write(reversArray[i] + " || ");
+}
