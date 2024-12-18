@@ -1,26 +1,17 @@
-﻿Console.WriteLine("Введите размер первого массива: ");
-int first = Int32.Parse(Console.ReadLine());
+﻿//Console.WriteLine("Введите размер первого массива: ");
+//int first = Int32.Parse(Console.ReadLine());
 
 
 //Console.WriteLine("Введите размер вложенного массива: ");
 //int second = Int32.Parse(Console.ReadLine());
 
-Random rnd = new Random();
+//Random rnd = new Random();
 
-char[] mainCharArray = new char[first];
+int firstInt, secondInt;
+int[] arrayInt;
 
-
-for (int i = 0; i < mainCharArray.Length; i++)
-{
-    mainCharArray[i] = (char)rnd.Next(97, 123);
-}
-
-
-for (int i = 0; i < mainCharArray.Length; i++)
-{
-    Console.Write(mainCharArray[i] + " || ");
-}
-
+char firstChar, secondChar;
+char[] arrayChar;
 
 
 Console.WriteLine();
@@ -252,24 +243,108 @@ Console.Write(average(mainArray));
 // ------------------------------------------------
 
 
-static char[] charMethod(char[] array)
-{
+//char[] mainCharArray = new char[first];
 
-    char[] chars = new char[array.Length];
-    for(int i  = 0; i < array.Length; i++)
-    {
-        chars[i] = array[(array.Length-1) - i];
-    }
 
-    return chars;
+//for (int i = 0; i < mainCharArray.Length; i++)
+//{
+//    mainCharArray[i] = (char)rnd.Next(97, 123);
+//}
 
+
+//for (int i = 0; i < mainCharArray.Length; i++)
+//{
+//    Console.Write(mainCharArray[i] + " || ");
 }
 
 
-char[] reversArray = charMethod(mainCharArray);
 
 
-for (int i = 0; i < reversArray.Length; i++)
+//static char[] charMethod(char[] array)
+//{
+
+//    char[] chars = new char[array.Length];
+//    for(int i  = 0; i < array.Length; i++)
+//    {
+//        chars[i] = array[(array.Length-1) - i];
+//    }
+
+//    return chars;
+
+//}
+
+
+//char[] reversArray = charMethod(mainCharArray);
+
+
+//for (int i = 0; i < reversArray.Length; i++)
+//{
+//    Console.Write(reversArray[i] + " || ");
+//}
+
+
+
+// ------------------------------------------------
+
+
+
+static int[] writeMethod(int first, int second)
 {
-    Console.Write(reversArray[i] + " || ");
+    int[] array = new int[second - first + 1];
+
+    for(int i = first; i < array.Length; i++)
+    {
+        array[i] = first + i;
+    }
+
+    return array;
+}
+
+static char[] writeMethod(char first, char second) /// cs0128 разобраться
+{
+    char[] array = new char[(int)second - (int)first + 1];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = (char)(first + i);
+    }
+
+    return array;
+}
+
+Console.WriteLine("Введите тип массива: \n 1 - Численный \n 2 - Символьный");
+int typeCheck = Int32.Parse(Console.ReadLine());
+
+if (typeCheck == 1)
+{
+    Console.WriteLine("Введите с какого числа начинать: ");
+    firstInt = Int32.Parse(Console.ReadLine());
+
+    Console.WriteLine("Введите каким числом закончить: ");
+    secondInt = Int32.Parse(Console.ReadLine());
+
+    arrayInt = writeMethod(firstInt, secondInt);
+
+    for (int i = 0; i < arrayInt.Length; i++)
+    {
+        Console.Write(arrayInt[i] + "||");
+    }
+
+
+}
+else if (typeCheck == 2)
+{
+    Console.WriteLine("Введите с какого символа начинать: ");
+    firstChar = Char.Parse(Console.ReadLine());
+
+    Console.WriteLine("Введите каким символом закончить: ");
+    secondChar =Char.Parse(Console.ReadLine());
+
+    arrayChar = writeMethod(firstChar, secondChar);
+
+    for (int i = 0; i < arrayChar.Length; i++)
+    {
+        Console.Write(arrayChar[i] + "||");
+    }
+
 }
