@@ -1,4 +1,8 @@
-﻿//Console.WriteLine("Введите размер первого массива: ");
+﻿
+using ConsoleApp4;
+
+
+//Console.WriteLine("Введите размер первого массива: ");
 //int first = Int32.Parse(Console.ReadLine());
 
 
@@ -7,11 +11,11 @@
 
 //Random rnd = new Random();
 
-int firstInt, secondInt;
-int[] arrayInt;
+//int firstInt, secondInt;
+//int[] arrayInt;
 
-char firstChar, secondChar;
-char[] arrayChar;
+//char firstChar, secondChar;
+//char[] arrayChar;
 
 
 Console.WriteLine();
@@ -255,7 +259,7 @@ Console.Write(average(mainArray));
 //for (int i = 0; i < mainCharArray.Length; i++)
 //{
 //    Console.Write(mainCharArray[i] + " || ");
-}
+//}
 
 
 
@@ -287,64 +291,53 @@ Console.Write(average(mainArray));
 // ------------------------------------------------
 
 
+//Console.WriteLine("Введите тип массива: \n 1 - Численный \n 2 - Символьный");  //Проблема решилась переносом методов в отдельный класс, как понимаю из за того что методы в методе Main как то криво определяются либо, определяються как функции
+//int typeCheck = Int32.Parse(Console.ReadLine());
 
-static int[] writeMethod(int first, int second)
-{
-    int[] array = new int[second - first + 1];
+//if (typeCheck == 1)
+//{
+//    Console.WriteLine("Введите с какого числа начинать: ");
+//    firstInt = Int32.Parse(Console.ReadLine());
 
-    for(int i = first; i < array.Length; i++)
-    {
-        array[i] = first + i;
-    }
+//    Console.WriteLine("Введите каким числом закончить: ");
+//    secondInt = Int32.Parse(Console.ReadLine());
 
-    return array;
-}
+//    arrayInt = Class1.writeMethod(firstInt, secondInt);
 
-static char[] writeMethod(char first, char second) /// cs0128 разобраться
-{
-    char[] array = new char[(int)second - (int)first + 1];
+//    foreach (int i in arrayInt)
+//    {
+//        Console.Write(i + " || ");
+//    }
 
-    for (int i = 0; i < array.Length; i++)
-    {
-        array[i] = (char)(first + i);
-    }
+//}
+//else if (typeCheck == 2)
+//{
+//    Console.WriteLine("Введите с какого символа начинать: ");
+//    firstChar = Char.Parse(Console.ReadLine());
 
-    return array;
-}
+//    Console.WriteLine("Введите каким символом закончить: ");
+//    secondChar =Char.Parse(Console.ReadLine());
 
-Console.WriteLine("Введите тип массива: \n 1 - Численный \n 2 - Символьный");
-int typeCheck = Int32.Parse(Console.ReadLine());
+//    arrayChar = Class1.writeMethod(firstChar, secondChar);
 
-if (typeCheck == 1)
-{
-    Console.WriteLine("Введите с какого числа начинать: ");
-    firstInt = Int32.Parse(Console.ReadLine());
+//    foreach (char i in arrayChar)
+//    {
+//        Console.Write(i + " || ");
+//    }
 
-    Console.WriteLine("Введите каким числом закончить: ");
-    secondInt = Int32.Parse(Console.ReadLine());
+//}
 
-    arrayInt = writeMethod(firstInt, secondInt);
-
-    for (int i = 0; i < arrayInt.Length; i++)
-    {
-        Console.Write(arrayInt[i] + "||");
-    }
+//------------------------------------------------
 
 
-}
-else if (typeCheck == 2)
-{
-    Console.WriteLine("Введите с какого символа начинать: ");
-    firstChar = Char.Parse(Console.ReadLine());
+//int[] returnElement = Class1.mmElement(2, 5, 123);
 
-    Console.WriteLine("Введите каким символом закончить: ");
-    secondChar =Char.Parse(Console.ReadLine());
+//Console.Write("Максимальный элемент: " + returnElement[0] + "\n" + "Минимальный элемент: " + returnElement[1]);
 
-    arrayChar = writeMethod(firstChar, secondChar);
 
-    for (int i = 0; i < arrayChar.Length; i++)
-    {
-        Console.Write(arrayChar[i] + "||");
-    }
+//------------------------------------------------
 
-}
+//Console.Write(Class1.addChar("ннн", 'ы', 'ы', 'ы'));
+
+
+//------------------------------------------------
