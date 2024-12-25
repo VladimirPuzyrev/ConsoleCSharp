@@ -2,6 +2,10 @@
 using ConsoleApp4;
 
 
+
+// переписать все статически методы на обычные
+
+
 //Console.WriteLine("Введите размер первого массива: ");
 //int first = Int32.Parse(Console.ReadLine());
 
@@ -341,3 +345,8 @@ Console.Write(average(mainArray));
 
 
 //------------------------------------------------
+
+
+
+Class2 obj = new Class2(65.17);
+
