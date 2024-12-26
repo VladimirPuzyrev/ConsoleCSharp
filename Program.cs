@@ -345,8 +345,3 @@ Console.Write(average(mainArray));
 
 
 //------------------------------------------------
-
-
-
-Class2 obj = new Class2(65.17);
-
